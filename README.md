@@ -48,8 +48,10 @@ After running one-hot encoding and converting categorical columns to binary colu
 ### Logistic Regression
 I ran three separate logistic regression models where each model had a separate response variable: Heart Disease, Kidney Disease, Skin Cancer.
 
+<img src='images/HeartDisease_Logistic.png'>
 
+<img src='images/KidneyDisease_Logistic.png'>
 
-
+<img src='images/SkinCancer_Logistic.png'>
 
 
