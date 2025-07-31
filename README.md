@@ -43,3 +43,13 @@ All other categorical columns were converted to numeric columns using one-hot en
 ```
 df = pd.get_dummies(df,columns=['AgeCategory', 'Race', 'Diabetic'], drop_first=True,dtype=int)
 ```
+After running one-hot encoding and converting categorical columns to binary columns there were 35 total columns in the dataset.
+
+### Logistic Regression
+I ran three separate logistic regression models where each model had a separate response variable: Heart Disease, Kidney Disease, Skin Cancer.
+
+
+
+
+
+
