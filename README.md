@@ -56,11 +56,11 @@ Three separate logistic regression models were built for each of the three disea
 <img src='images/HeartDisease_Logistic.png'>
 <img src= 'images/heart_cm_logistic.png' width=400px height = 400px>
 
-## Kidney Disease
+### Kidney Disease
 <img src='images/KidneyDisease_Logistic.png'>
 <img src= 'images/kidney_cm_logistic.png' width=400px height = 400px>
 
-## Skin Cancer
+### Skin Cancer
 <img src='images/SkinCancer_Logistic.png'>
 <img src= 'images/skin_cm_logistic.png' width=400px height = 400px>
 
