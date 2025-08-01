@@ -65,7 +65,9 @@ Three separate logistic regression models were built for each of the three disea
 <img src= 'images/skin_cm_logistic.png' width=400px height = 400px>
 
 Across all three models, there was no sign of overfitting, as training and testing accuracies were consistently similar. The logistic regression models demonstrated relatively high recall scores, indicating strong performance in identifying positive cases. Notably, the skin cancer model achieved a **recall of 0.83**, meaning it **correctly identified 83% of individuals who actually had skin cancer**.
+
 However, precision was low across all models, suggesting that a significant number of the positive predictions were incorrect. As a result, the F1-scores ranged between 0.15 and 0.35, reflecting an imbalance between precision and recall. Among the three models, the **heart disease model achieved the highest AUC**, indicating it had the best overall ability to distinguish between classes.
+
 The imbalance between recall and precision may be due to the class imbalance in the dataset. This is expected, as the majority of individuals do not have heart disease, kidney disease, or skin cancer. To address this issue, sampling techniques such as **SMOTE, ADASYN, RandomOverSampler, and RandomUnderSampler** can be applied. However, it’s important to note that using these techniques can increase the risk of overfitting.
 
 
