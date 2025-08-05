@@ -90,8 +90,8 @@ All three **Decision Tree models** demonstrated significantly lower precision an
 To help reduce overfitting, the hyperparameter ccp_alpha was tuned and set to 0.002 to enable cost-complexity pruning, to help choose an optimal ccp_alpha value cross validation could be used however, it took a while to do:
 ```
 # Decision Tree
-    clf = DecisionTreeClassifier(ccp_alpha=0.002, class_weight='balanced', random_state=42)
-`    clf.fit(X_train_res, y_train_res)
+clf = DecisionTreeClassifier(ccp_alpha=0.002, class_weight='balanced', random_state=42)
+clf.fit(X_train_res, y_train_res)
 ```
 Although cross-validation could have been used to select the optimal ccp_alpha value, the process was computationally intensive and time-consuming for this dataset.
 
@@ -100,6 +100,6 @@ To address class imbalance in the dataset, SMOTE (Synthetic Minority Oversamplin
 
 ```
 sm = SMOTE(random_state=42)
-    X_train_res, y_train_res = sm.fit_resample(X_train, y_train)
+X_train_res, y_train_res = sm.fit_resample(X_train, y_train)
 ```
 Despite these efforts to improve performance, through both pruning and resampling, the Decision Tree models did not outperform the logistic regression models. This may be due to other factors such as pruning, tree depth, or the choice of splitting criteria (e.g., Gini impurity vs. entropy). Further tuning and model experimentation could potentially improve results.
