@@ -86,14 +86,20 @@ Decision Tree classifiers were also trained to predict the same three conditions
 <img src="images/skin_cm_decisiontree.png" width=400px height = 400px>
 <img src="images/skin_decisontree.png" width=400px height = 400px>
 
-All three of the **Decision Tree** models had a significantly lower precision and recall than the logistic model. This could be due to the fact that the decision tree models had some overfitting which can be seen when looking at the testing and training accuracy. To avoid overfitting in decision tree models, the hyperparameter called **ccp_alpha"" which was set to 0.002:
+All three **Decision Tree models** demonstrated significantly lower precision and recall scores compared to their corresponding logistic regression models.  For instance, the recall for detecting heart disease in the logistic regression model was **76%**, while the decision tree model achieved only **54%**. This performance gap may be attributed to overfitting, as suggested by the noticeable difference between training and testing accuracy.
+To help reduce overfitting, the hyperparameter ccp_alpha was tuned and set to 0.002 to enable cost-complexity pruning, to help choose an optimal ccp_alpha value cross validation could be used however, it took a while to do:
 ```
 # Decision Tree
     clf = DecisionTreeClassifier(ccp_alpha=0.002, class_weight='balanced', random_state=42)
 `    clf.fit(X_train_res, y_train_res)
 ```
-Additionally, SMOTE was used to deal with class imbalance:
+Although cross-validation could have been used to select the optimal ccp_alpha value, the process was computationally intensive and time-consuming for this dataset.
+
+
+To address class imbalance in the dataset, SMOTE (Synthetic Minority Oversampling Technique) was applied during training:
+
 ```
 sm = SMOTE(random_state=42)
     X_train_res, y_train_res = sm.fit_resample(X_train, y_train)
 ```
+Despite these efforts to improve performance, through both pruning and resampling, the Decision Tree models did not outperform the logistic regression models. This may be due to other factors such as pruning, tree depth, or the choice of splitting criteria (e.g., Gini impurity vs. entropy). Further tuning and model experimentation could potentially improve results.
