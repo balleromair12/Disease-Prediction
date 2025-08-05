@@ -86,4 +86,14 @@ Decision Tree classifiers were also trained to predict the same three conditions
 <img src="images/skin_cm_decisiontree.png" width=400px height = 400px>
 <img src="images/skin_decisontree.png" width=400px height = 400px>
 
-Talk about results here....
+All three of the **Decision Tree** models had a significantly lower precision and recall than the logistic model. This could be due to the fact that the decision tree models had some overfitting which can be seen when looking at the testing and training accuracy. To avoid overfitting in decision tree models, the hyperparameter called **ccp_alpha"" which was set to 0.002:
+```
+# Decision Tree
+    clf = DecisionTreeClassifier(ccp_alpha=0.002, class_weight='balanced', random_state=42)
+`    clf.fit(X_train_res, y_train_res)
+```
+Additionally, SMOTE was used to deal with class imbalance:
+```
+sm = SMOTE(random_state=42)
+    X_train_res, y_train_res = sm.fit_resample(X_train, y_train)
+```
